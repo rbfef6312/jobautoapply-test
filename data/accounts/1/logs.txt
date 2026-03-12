@@ -1,0 +1,543 @@
+[2026-03-11 04:50:17] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 04:50:18] 使用模式：推荐岗位，URL：https://hk.jobsdb.com/jobs?daterange=3
+[2026-03-11 04:50:22] 检测到职位卡片数量：32
+[2026-03-11 04:50:39] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 04:50:45] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 04:50:45] 未找到 Continue 按钮
+[2026-03-11 04:50:45] 填表失败（第1次），未找到提交按钮，稍后重试…
+[2026-03-11 04:51:04] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 04:51:12] 选择：Don't include a cover letter
+[2026-03-11 04:51:13] 点击 Continue 按钮
+[2026-03-11 04:51:17] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 04:51:55] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 04:52:00] 选择：Don't include a cover letter
+[2026-03-11 04:52:00] 点击 Continue 按钮
+[2026-03-11 04:52:03] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 04:52:39] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/job/90837507?type=standard&ref=search-standalone#sol=0949d85154f795463940b71dc514ed54936653f4），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 04:52:40] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 04:52:49] 选择：Don't include a cover letter
+[2026-03-11 04:52:50] 点击 Continue 按钮
+[2026-03-11 04:52:54] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 04:53:23] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 04:53:29] 选择：Don't include a cover letter
+[2026-03-11 04:53:30] 点击 Continue 按钮
+[2026-03-11 05:01:55] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 05:01:56] 使用模式：推荐岗位，URL：https://hk.jobsdb.com/jobs?daterange=3
+[2026-03-11 05:02:00] 检测到职位卡片数量：32
+[2026-03-11 05:02:14] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 05:02:18] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:02:18] 点击 Continue 按钮
+[2026-03-11 05:02:43] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 05:02:49] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:02:49] 点击 Continue 按钮
+[2026-03-11 05:09:39] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 05:09:39] 使用模式：推荐岗位，URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 05:09:43] 检测到职位卡片数量：32
+[2026-03-11 05:09:58] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90812825?type=standard&ref=search-standalone#sol=894e8668857e3bdd483c63c5bb41a3ca55ced35b），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 05:10:00] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 05:10:04] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:10:04] 点击 Continue 按钮
+[2026-03-11 05:10:31] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 05:10:36] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:10:36] 点击 Continue 按钮
+[2026-03-11 05:13:34] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 05:13:35] 使用模式：推荐岗位，URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 05:13:39] 检测到职位卡片数量：32
+[2026-03-11 05:13:49] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90832646?type=standard&ref=search-standalone#sol=5041404d02fc78b4091be9eb9a799a379daf0c96），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 05:13:51] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 05:13:59] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:13:59] 点击 Continue 按钮
+[2026-03-11 05:14:29] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 05:14:35] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:14:35] 点击 Continue 按钮
+[2026-03-11 05:15:06] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90845285?type=standard&ref=search-standalone#sol=ffb64e39cd8fa58ded1178ce5a50fc7d2f36fbb1），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 05:15:10] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:15:10] 未找到 Continue 按钮
+[2026-03-11 05:15:39] 填表失败（第1次），未找到提交按钮，稍后重试…
+[2026-03-11 05:15:56] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:15:56] 点击 Continue 按钮
+[2026-03-11 05:30:00] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 05:30:01] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 05:30:08] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 05:30:08] 检测到职位卡片数量：32
+[2026-03-11 05:30:09] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：HR & Administration Manager | Administrative Assistant | Business Assistant | SENIOR ADMINISTRATION OFFICER | HR and Admin Manager
+[2026-03-11 05:30:23] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90812825?type=standard&ref=search-standalone#sol=6d14c44692b983fc4212d5da0973c28b8fe976a0），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 05:30:25] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 05:30:32] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:30:32] 点击 Continue 按钮
+[2026-03-11 05:33:46] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 05:33:47] 使用模式：职位关键词，请求 URL：https://hk.jobsdb.com/zh/shopify-jobs?daterange=3
+[2026-03-11 05:33:54] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/shopify-jobs?daterange=3
+[排查] 页面标题：香港Shopify職位 - 2026Mar | Jobsdb
+[2026-03-11 05:33:54] 检测到职位卡片数量：32
+[2026-03-11 05:33:55] [排查] 第1页 URL：https://hk.jobsdb.com/zh/shopify-jobs?daterange=3，职位数：32，前几条：E-Commerce Operations Speciali | Digital Marketing Executive (E | Senior Manager, Digital Busine | Senior eCommerce Executive | Marketing & eCommerce Assistan
+[2026-03-11 05:34:05] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90843957?type=standard&ref=search-standalone#sol=58466cf4a24e0c94cdd6866d54dec306289ed675），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 05:34:06] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 05:34:12] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:34:12] 点击 Continue 按钮
+[2026-03-11 05:34:41] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 05:34:47] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:34:47] 点击 Continue 按钮
+[2026-03-11 05:35:13] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90792688?type=standard&ref=search-standalone#sol=1e8ed5fdf03370a6dcf0dc98fb21ce9196e66476），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 05:35:15] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 05:35:19] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:35:19] 点击 Continue 按钮
+[2026-03-11 05:35:42] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 05:35:47] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:35:47] 点击 Continue 按钮
+[2026-03-11 05:39:43] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 05:39:44] 使用模式：职位关键词，请求 URL：https://hk.jobsdb.com/zh/shopify-jobs?daterange=3
+[2026-03-11 05:39:50] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/shopify-jobs?daterange=3
+[排查] 页面标题：香港Shopify職位 - 2026Mar | Jobsdb
+[2026-03-11 05:39:50] 检测到职位卡片数量：32
+[2026-03-11 05:39:52] [排查] 第1页 URL：https://hk.jobsdb.com/zh/shopify-jobs?daterange=3，职位数：32，前几条：E-Commerce Operations Speciali | Digital Marketing Executive (E | Senior Manager, Digital Busine | Senior eCommerce Executive | Marketing & eCommerce Assistan
+[2026-03-11 05:40:08] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 05:40:12] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:40:12] 点击 Continue 按钮
+[2026-03-11 05:40:40] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 05:40:46] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:40:46] 点击 Continue 按钮
+[2026-03-11 05:56:58] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 05:56:59] 使用模式：职位关键词，请求 URL：https://hk.jobsdb.com/zh/shopify-jobs?daterange=3
+[2026-03-11 05:57:06] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/shopify-jobs?daterange=3
+[排查] 页面标题：香港Shopify職位 - 2026Mar | Jobsdb
+[2026-03-11 05:57:06] 检测到职位卡片数量：32
+[2026-03-11 05:57:07] [排查] 第1页 URL：https://hk.jobsdb.com/zh/shopify-jobs?daterange=3，职位数：32，前几条：E-Commerce Operations Speciali | Digital Marketing Executive (E | Senior Manager, Digital Busine | Senior eCommerce Executive | Marketing & eCommerce Assistan
+[2026-03-11 05:57:23] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90843957?type=standard&ref=search-standalone#sol=e3359e100bed82b6a6fade55ada5781a8cb7e61f），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 05:57:24] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 05:57:28] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 05:57:28] 点击 Continue 按钮
+[2026-03-11 05:57:31] [排查] Continue 后申请页 URL：https://accounts.google.com/v3/signin/identifier?opparams=%253Flibrary_name%253DAuth0&dsh=S185469570%3A1773179849860026&client_id=972827985627-9nki700erb6doriuju1946bmk6muo4b6.apps.googleusercontent.com&o2v=1&redirect_uri=https%3A%2F%2Flogin.seek.com%2Flogin%2Fcallback&response_type=code&scope=email+profile&service=lso&state=QWTvW0ABBELs7yu07Nkux16Ys-yYKEzc&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAMnssmC6duM0qiQnXy0_VINev5RPpoVIEVt3OCbZk8CHwrTlzK7ZOkEgKwjtJ0PUgsq72Hjv4SRDcMk0F7KZJdMhQ6Cfb4p3padU42_42nugBd3Qqt1wK56oY_NOrW8nC5QNpfJK82Nr-sJQ7O2JYwIxIKG7bTcbIyGtDDHXuNFbK2po8-8n6oN0Y1_FCTrHyeQPdk8DFKcjdyqD99KXtkRLZ9kRrDGsD7a83BS21BlAMPQdR21tMzgmqatDbXMxE1JG6GVW-UIyBx_2D93io4mu1Nr68kALiO8hqhO9T5KNzhVNwlFRusGvG2m7P5Tyvh70qQAJ9vLH2lMC3MDOZ2dKCMwpqD3owSuKTmOj5UpT03opJUyohE9pM7ZHYOqmcm8C3I_u3Ij1stACOiECKHrROBI1WA944XX_Dp8zXrUuvhHuFK8vzftwjJO0exX4Gtc8bdSvhu2czhcyCz8VaDW0klbuQ%26flowName%3DGeneralOAuthFlow%26as%3DS185469570%253A1773179849860026%26client_id%3D972827985627-9nki700erb6doriuju1946bmk6muo4b6.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Flogin.seek.com&rart=ANgoxcca9uc0DKJQ7uTqPgPLFvnnruVbmh6zrWNBzfHpw35cfJ0Wij6XwqoXkyrevf096R5PJJVsz3VQTXpGKs8NSdMhoqkc2zgrVki_bETMp88ros9wuHE
+[2026-03-11 05:57:31] [调试] 浏览器可见，请查看地址栏，30 秒后自动关闭…
+[2026-03-11 05:58:12] 收到停止请求，中断投递。
+[2026-03-11 16:10:24] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 16:10:28] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 16:10:35] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 16:10:35] 检测到职位卡片数量：32
+[2026-03-11 16:10:36] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Senior Officer - Examinations  | Temporary Assistant Administra | Customer Relations Officer | Personal Assistant 私人助理 | Audit Assistant / Intermediate
+[2026-03-11 16:10:55] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 16:10:55] 点击 Continue 按钮
+[2026-03-11 16:10:56] [排查] Continue 后申请页 URL：https://accounts.google.com/v3/signin/identifier?opparams=%253Flibrary_name%253DAuth0&dsh=S438279988%3A1773216657036754&client_id=972827985627-9nki700erb6doriuju1946bmk6muo4b6.apps.googleusercontent.com&o2v=1&redirect_uri=https%3A%2F%2Flogin.seek.com%2Flogin%2Fcallback&response_type=code&scope=email+profile&service=lso&state=1WaJFWA-FxMTw0R7DZOcfo4VaqnJlRvO&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAPDNy8EHSscjU5NUi0onKKkwB944ChuwCf6vlU8zqzsPiYlCyj91CaKcm_CVTvii3LpssD48HlQgmNcplhzvKAN2E-osxkJIRoq-8L2pK6SD_sksX2m4M5aCqqnB9DPizWmA_m5kg5_ghBVOo8QkOI52NyhJGArq_8d-9MYseVJXf1HwwZ032rvDckHK_kcoduYSBqRZxsmXEqITX8JPWos7RtBwHWIh01QScybw-5UHXNUUIQSj4Gjr0G5GXPLbha_truk9OPHT3CuLs3zCUttLZ1YGXi0GWYHs7SCijvCbnaJBumCMHAs7cYq5A_46q5geu-CF7kufOZ9iT5JLgvqNNyfWPrI9UE9gGNrdhBrdODEvFOuAWHeDGubEj0pUatsTgYVAymrTuVs7up31GmzhOfkHHmtDtDrxeI4muaVnVAxNmtNh2gR_lrEW7BlpjUKUF63XXNc2XaOJcbsKu_KhDtMWA%26flowName%3DGeneralOAuthFlow%26as%3DS438279988%253A1773216657036754%26client_id%3D972827985627-9nki700erb6doriuju1946bmk6muo4b6.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Flogin.seek.com&rart=ANgoxcclOqsvLRzs0nzbwTg_fYGzVSZefY0U3hAn3JIO100b0fxzCWLLBmFkMZCLWCLFCv-BX2nphd0OV5dIJf1KuG8mZMR7-Zl2r0lCfNqnPchDXZNgwZc
+[2026-03-11 16:10:56] [调试] 浏览器可见，请查看地址栏，30 秒后自动关闭…
+[2026-03-11 16:11:38] 收到停止请求，中断投递。
+[2026-03-11 17:17:10] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 17:17:11] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 17:17:16] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 17:17:16] 检测到职位卡片数量：32
+[2026-03-11 17:17:18] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Senior Officer - Examinations  | Temporary Assistant Administra | Personal Assistant 私人助理 | Customer Relations Officer | Finance Assistant
+[2026-03-11 17:17:38] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 17:17:38] 点击 Continue 按钮
+[2026-03-11 17:17:40] [排查] Continue 后申请页 URL：https://accounts.google.com/v3/signin/identifier?opparams=%253Flibrary_name%253DAuth0&dsh=S-65557921%3A1773220659773548&client_id=972827985627-9nki700erb6doriuju1946bmk6muo4b6.apps.googleusercontent.com&o2v=1&redirect_uri=https%3A%2F%2Flogin.seek.com%2Flogin%2Fcallback&response_type=code&scope=email+profile&service=lso&state=HupYR1rAdxRJVvb1OvGqlNnpzrnb-0hs&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hANxr4nlyhzbIGQY40NMvNTNHa_iMMyx7XIzo4sjz-Wz0NGI55y4fnug-NR3gt4BtvKUqMUSPLNru7uWKhFF92DNsbn_963Q10OggXGlj-BRJ66j1nVc1_7p_FCeQx_FGnaPuUfRDqr6jyPumjA3WoU8tlB2NWADqqZ5vcIeBwl9WZnW738LV82_DFtGOnnJAlNu8ttN4QisVzWHJAjyxb-qJmM2XI7jYNbKCRoYIzeg5xGVitPnaT2bgm4VQhFx8GRT7RJ9ch7u1sMULmqQ-S2jRAepvXtd8GqsH1ptRvlMsn4cPMs9W1Z9xqWjtfTXfzFIrzcMADVpsVMZ-Htk-_Wj28iRfRvCwpQJO_5ca2HjxW_nHsuFOJ3oZdrcQV5r_QA3vZAYSVDQy4M-VW8JbZo0otr31Hyd3SzIsnWAHyLla23ZzKDz19pIMIddzbUBoxj1fy-8zQDn0rU_MU0U8L3sZ7NcFg%26flowName%3DGeneralOAuthFlow%26as%3DS-65557921%253A1773220659773548%26client_id%3D972827985627-9nki700erb6doriuju1946bmk6muo4b6.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Flogin.seek.com&rart=ANgoxceTBvvSrNTaYx6fKYRFbvJYHxWBlBYH91HMHJF4bHWulQ-9lOJZCvALcFNRPUL5R0IpH6SvQHxgojKWgxMSYJY1enzP0mzdrXT5I_NJgtt0LYLCejA
+[2026-03-11 17:17:40] [调试] 浏览器可见，请查看地址栏，30 秒后自动关闭…
+[2026-03-11 17:18:36] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 17:28:02] 检测到 JobsDB 登录已失效，请在 JobsDB 登录页重新登录。
+[2026-03-11 17:28:31] 检测到 JobsDB 登录已失效，请在 JobsDB 登录页重新登录。
+[2026-03-11 17:29:19] 检测到 JobsDB 登录已失效，请在 JobsDB 登录页重新登录。
+[2026-03-11 17:51:49] [排查] JobsDB 登录成功，已保存 session，跳转 URL=https://hk.jobsdb.com/zh/oauth/callback?code=dggGq4aqp8IRl4HKlRdj-1oK1eIVAkHYiGP...
+[2026-03-11 17:52:24] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 17:52:25] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 17:52:32] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 17:52:32] 检测到职位卡片数量：32
+[2026-03-11 17:52:33] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Administrative Assistant | Senior Officer - Examinations  | Temporary Assistant Administra | Personal Assistant 私人助理 | Personal Assistant
+[2026-03-11 17:52:45] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 17:52:52] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-11 17:52:52] 未找到 Continue 按钮
+[2026-03-11 17:52:52] 填表失败（第1次），未找到提交按钮，稍后重试…
+[2026-03-11 17:53:03] 填表失败（第2次），投递异常：Locator.count: Target page, context or browser has been closed，稍后重试…
+[2026-03-11 18:00:34] [排查] JobsDB 登录成功，已保存 session，跳转 URL=https://hk.jobsdb.com/zh/oauth/callback?code=UK-gSeK095mM_-qIw2uh_lWzuXrPIF95MrS...
+[2026-03-11 18:00:55] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 18:00:56] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 18:01:01] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 18:01:01] 检测到职位卡片数量：32
+[2026-03-11 18:01:02] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Performance Marketing Executiv | E-Commerce Officer | Senior Marketing Officer (Soci | Marketing Executive | 市場推廣主任 (Marketing Executive)
+[2026-03-11 18:01:16] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 18:01:22] 选择：Don't include a cover letter
+[2026-03-11 18:01:22] 点击 Continue 按钮
+[2026-03-11 18:01:25] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 18:02:01] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90871938?type=standard&ref=search-standalone#sol=77949453c47e40959c5eef6db00a43c8959586b0），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 18:02:02] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 18:02:08] 选择：Don't include a cover letter
+[2026-03-11 18:02:08] 点击 Continue 按钮
+[2026-03-11 18:02:09] 填表失败（第1次），已停止，稍后重试…
+[2026-03-11 18:08:01] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 18:08:02] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 18:08:09] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 18:08:09] 检测到职位卡片数量：32
+[2026-03-11 18:08:10] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Performance Marketing Executiv | E-Commerce Officer | Senior Marketing Officer | Senior Marketing Officer (Soci | Digital Marketing Officer - Lu
+[2026-03-11 18:08:13] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 18:08:42] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 18:08:48] 选择：Don't include a cover letter
+[2026-03-11 18:08:48] 点击 Continue 按钮
+[2026-03-11 18:08:56] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 18:09:14] 收到停止请求，中断投递。
+[2026-03-11 18:35:07] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 18:35:08] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 18:35:14] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 18:35:14] 检测到职位卡片数量：32
+[2026-03-11 18:35:15] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Senior Marketing Officer | Senior Marketing Officer (Soci | Digital Marketing Officer - Lu | Officer - Marketing | (Senior) Marketing Executive
+[2026-03-11 18:35:27] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 18:35:36] 选择：Don't include a cover letter
+[2026-03-11 18:35:36] 点击 Continue 按钮
+[2026-03-11 18:35:40] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 18:36:11] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90863405?type=standard&ref=search-standalone#sol=02b2c7ea4cb66d46c3c32ed70fed205c35804666），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 18:36:13] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 18:36:18] 选择：Don't include a cover letter
+[2026-03-11 18:36:19] 点击 Continue 按钮
+[2026-03-11 18:36:24] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 18:36:58] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 18:37:06] 选择：Don't include a cover letter
+[2026-03-11 18:37:07] 点击 Continue 按钮
+[2026-03-11 18:37:08] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 18:55:36] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 18:55:37] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 18:55:44] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 18:55:44] 检测到职位卡片数量：32
+[2026-03-11 18:55:45] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Marketing Officer | Officer - Marketing | Senior Marketing Officer (Soci | Digital Marketing Officer - Lu | Marketing Specialist
+[2026-03-11 18:55:59] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 18:56:07] 选择：Don't include a cover letter
+[2026-03-11 18:56:07] 点击 Continue 按钮
+[2026-03-11 18:56:21] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 18:56:56] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 18:57:03] 选择：Don't include a cover letter
+[2026-03-11 18:57:03] 点击 Continue 按钮
+[2026-03-11 18:57:10] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 18:57:32] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 18:57:48] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 18:58:12] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 18:58:21] 选择：Don't include a cover letter
+[2026-03-11 18:58:21] 点击 Continue 按钮
+[2026-03-11 18:58:24] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 18:58:57] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 18:59:02] 选择：Don't include a cover letter
+[2026-03-11 18:59:02] 点击 Continue 按钮
+[2026-03-11 18:59:04] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 19:02:32] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 19:02:33] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 19:02:39] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 19:02:39] 检测到职位卡片数量：32
+[2026-03-11 19:02:40] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Marketing Officer | Officer - Marketing | Senior Marketing Officer (Soci | Marketing Specialist | Digital Marketing Officer - Lu
+[2026-03-11 19:02:44] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 19:03:01] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 19:03:17] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 19:03:34] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 19:03:52] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 19:04:14] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90864951?type=standard&ref=search-standalone#sol=8139ccac4d3d276da9163376338d7623c97f629b），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-11 19:04:15] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-11 19:04:20] 选择：Don't include a cover letter
+[2026-03-11 19:04:21] 点击 Continue 按钮
+[2026-03-11 19:04:28] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-11 19:09:17] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-11 19:09:18] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-11 19:09:24] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-11 19:09:24] 检测到职位卡片数量：32
+[2026-03-11 19:09:25] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Marketing Officer | Officer - Marketing | Assistant Marketing Manager | Marketing Specialist | (Senior) Marketing Executive
+[2026-03-11 19:09:28] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 19:09:47] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-11 19:10:12] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-11 19:10:17] 选择：Don't include a cover letter
+[2026-03-11 19:10:18] 点击 Continue 按钮
+[2026-03-11 19:10:19] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 02:48:47] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-12 02:48:48] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-12 02:48:54] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-12 02:48:54] 检测到职位卡片数量：32
+[2026-03-12 02:48:55] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Senior Marketing Executive | Digital Marketing Officer | Marketing Executive | Assistant Marketing Manager (S | Performance Marketing Officer
+[2026-03-12 02:49:08] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 02:49:13] 选择：Don't include a cover letter
+[2026-03-12 02:49:14] 点击 Continue 按钮
+[2026-03-12 02:49:21] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 02:49:51] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 02:49:57] 选择：Don't include a cover letter
+[2026-03-12 02:49:58] 点击 Continue 按钮
+[2026-03-12 02:50:04] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 02:50:37] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-12 02:50:37] 未找到 Continue 按钮
+[2026-03-12 02:50:37] [排查] Continue 后申请页 URL：https://headlinejobs.hk/JobSearch/JobDetail?Jobid=2571852
+[2026-03-12 02:50:56] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-12 02:51:26] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-12 02:51:26] 未找到 Continue 按钮
+[2026-03-12 02:51:26] [排查] Continue 后申请页 URL：https://www.gtshk.net/copy-of-digital-media-designer
+[2026-03-12 02:51:38] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-12 02:51:54] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-12 02:52:18] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 02:52:23] 选择：Don't include a cover letter
+[2026-03-12 02:52:24] 点击 Continue 按钮
+[2026-03-12 02:52:27] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 02:52:49] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-12 03:06:20] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-12 03:06:21] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-12 03:06:27] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-12 03:06:27] 检测到职位卡片数量：32
+[2026-03-12 03:06:28] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Digital Marketing Officer - Lu | Assistant Marketing Manager (S | Assistant Marketing Manager | Marketing Officer/Assistant | Marketing Executive (Part-Time
+[2026-03-12 03:06:46] 抓取职位列表时发生异常：BrowserContext.new_page: Connection closed while reading from the driver
+[2026-03-12 16:52:32] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-12 16:52:33] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-12 16:52:33] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-12 16:52:33] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-12 16:52:39] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-12 16:52:39] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-12 16:52:39] 检测到职位卡片数量：32
+[2026-03-12 16:52:39] 检测到职位卡片数量：32
+[2026-03-12 16:52:40] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Officer, Digital Marketing | Assistant Product Manager/Seni | Marketing Executive | Marketing Executive (Digital) | Social Media Manager (Crypto)
+[2026-03-12 16:52:40] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Officer, Digital Marketing | Assistant Product Manager/Seni | Marketing Executive | Marketing Executive (Digital) | Social Media Manager (Crypto)
+[2026-03-12 16:52:53] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 16:53:02] 选择：Don't include a cover letter
+[2026-03-12 16:53:02] 点击 Continue 按钮
+[2026-03-12 16:53:06] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 16:53:40] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 16:53:47] 选择：Don't include a cover letter
+[2026-03-12 16:53:48] 点击 Continue 按钮
+[2026-03-12 16:53:50] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 16:54:21] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 16:54:28] 选择：Don't include a cover letter
+[2026-03-12 16:54:29] 点击 Continue 按钮
+[2026-03-12 16:54:36] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 16:55:07] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 16:55:14] 选择：Don't include a cover letter
+[2026-03-12 16:55:14] 点击 Continue 按钮
+[2026-03-12 16:55:21] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 16:55:57] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-12 16:55:57] 未找到 Continue 按钮
+[2026-03-12 16:55:57] [排查] Continue 后申请页 URL：https://redotpay.bamboohr.com/careers/123?source=aWQ9MjI%3D
+[2026-03-12 16:56:20] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 16:56:25] 选择：Don't include a cover letter
+[2026-03-12 16:56:25] 点击 Continue 按钮
+[2026-03-12 16:56:30] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 16:57:05] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 16:57:10] 选择：Don't include a cover letter
+[2026-03-12 16:57:11] 点击 Continue 按钮
+[2026-03-12 16:57:18] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 16:57:47] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 16:57:54] 选择：Don't include a cover letter
+[2026-03-12 16:57:54] 点击 Continue 按钮
+[2026-03-12 16:57:55] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 16:58:28] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 16:58:33] 选择：Don't include a cover letter
+[2026-03-12 16:58:34] 点击 Continue 按钮
+[2026-03-12 16:58:41] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 16:59:12] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 16:59:19] 选择：Don't include a cover letter
+[2026-03-12 16:59:19] 点击 Continue 按钮
+[2026-03-12 16:59:21] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:00:11] 填表失败（第1次），未找到提交按钮，稍后重试…
+[2026-03-12 17:00:11] 填表失败（第1次），未找到提交按钮，稍后重试…
+[2026-03-12 17:00:26] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:00:35] 选择：Don't include a cover letter
+[2026-03-12 17:00:36] 点击 Continue 按钮
+[2026-03-12 17:00:37] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:01:09] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90890206?type=standard&ref=search-standalone#sol=40b0b3192f98ce07c484da3b8f97c635274f0461），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-12 17:01:10] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-12 17:01:16] 选择：Don't include a cover letter
+[2026-03-12 17:01:17] 点击 Continue 按钮
+[2026-03-12 17:01:29] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:02:02] 选择 Cover letter 选项时出错：'NoneType' object has no attribute 'count'
+[2026-03-12 17:02:02] 未找到 Continue 按钮
+[2026-03-12 17:02:02] [排查] Continue 后申请页 URL：https://form.jotform.com/253308522618456
+[2026-03-12 17:02:29] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:02:37] 选择：Don't include a cover letter
+[2026-03-12 17:02:38] 点击 Continue 按钮
+[2026-03-12 17:02:41] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:03:13] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:03:21] 选择：Don't include a cover letter
+[2026-03-12 17:03:21] 点击 Continue 按钮
+[2026-03-12 17:03:26] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:04:00] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:04:07] 选择：Don't include a cover letter
+[2026-03-12 17:04:08] 点击 Continue 按钮
+[2026-03-12 17:04:15] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:04:46] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90847488?type=standard&ref=search-standalone#sol=5650afed5dcd4a7d0b785329159e79023a132c27），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-12 17:04:47] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-12 17:04:52] 选择：Don't include a cover letter
+[2026-03-12 17:04:53] 点击 Continue 按钮
+[2026-03-12 17:04:55] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:05:25] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:05:33] 选择：Don't include a cover letter
+[2026-03-12 17:05:33] 点击 Continue 按钮
+[2026-03-12 17:05:40] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:06:09] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:06:16] 选择：Don't include a cover letter
+[2026-03-12 17:06:16] 点击 Continue 按钮
+[2026-03-12 17:06:22] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:06:51] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:06:58] 选择：Don't include a cover letter
+[2026-03-12 17:06:59] 点击 Continue 按钮
+[2026-03-12 17:07:04] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:07:43] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:07:50] 选择：Don't include a cover letter
+[2026-03-12 17:07:50] 点击 Continue 按钮
+[2026-03-12 17:07:52] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:08:23] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:08:29] 选择：Don't include a cover letter
+[2026-03-12 17:08:30] 点击 Continue 按钮
+[2026-03-12 17:08:38] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:09:08] expect_popup 超时或失败（当前 url: https://hk.jobsdb.com/zh/job/90650878?type=standard&ref=search-standalone#sol=e90ccb3dc78e2474cd794851c33e0694b30a855a），尝试在当前页继续点击：Timeout 800ms exceeded while waiting for event "popup"
+=========================== logs ===========================
+waiting for event "popup"
+============================================================
+[2026-03-12 17:09:10] 点击 Apply 按钮出现异常，继续尝试填表：Locator.click: Timeout 1500ms exceeded.
+Call log:
+  - waiting for locator("a[data-automation='job-detail-apply']").first
+
+[2026-03-12 17:09:15] 选择：Don't include a cover letter
+[2026-03-12 17:09:16] 点击 Continue 按钮
+[2026-03-12 17:09:20] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:09:50] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:09:55] 选择：Don't include a cover letter
+[2026-03-12 17:09:56] 点击 Continue 按钮
+[2026-03-12 17:10:03] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:10:29] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:10:35] 选择：Don't include a cover letter
+[2026-03-12 17:10:36] 点击 Continue 按钮
+[2026-03-12 17:10:40] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:11:12] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:11:17] 选择：Don't include a cover letter
+[2026-03-12 17:11:17] 点击 Continue 按钮
+[2026-03-12 17:11:26] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:12:04] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:12:09] 选择：Don't include a cover letter
+[2026-03-12 17:12:10] 点击 Continue 按钮
+[2026-03-12 17:12:15] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:12:45] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:12:53] 选择：Don't include a cover letter
+[2026-03-12 17:12:54] 点击 Continue 按钮
+[2026-03-12 17:12:59] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:13:31] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:13:36] 选择：Don't include a cover letter
+[2026-03-12 17:13:36] 点击 Continue 按钮
+[2026-03-12 17:13:38] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:14:11] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:14:15] 选择：Don't include a cover letter
+[2026-03-12 17:14:15] 点击 Continue 按钮
+[2026-03-12 17:14:20] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:14:45] 检测到该职位已投递（You applied on），跳过本次申请。
+[2026-03-12 17:15:12] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:15:19] 选择：Don't include a cover letter
+[2026-03-12 17:15:20] 点击 Continue 按钮
+[2026-03-12 17:15:22] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:15:56] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-12 17:16:03] 选择：Don't include a cover letter
+[2026-03-12 17:16:03] 点击 Continue 按钮
+[2026-03-12 17:16:04] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-12 17:16:26] [排查] 翻页至第2页（点击按钮），当前 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-12 17:16:29] 自动投递完成: 共 64 个, 成功 29, 失败 3, 跳过 0
+[2026-03-13 01:14:39] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-13 01:14:39] 启动 Playwright，准备抓取并投递 JobsDB 职位…
+[2026-03-13 01:14:39] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-13 01:14:40] 使用模式：推荐岗位，请求 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[2026-03-13 01:14:44] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-13 01:14:44] [排查] 加载后实际 URL：https://hk.jobsdb.com/zh/jobs?daterange=3
+[排查] 页面标题：Jobs in 香港 - Mar 2026 | Jobsdb
+[2026-03-13 01:14:44] 检测到职位卡片数量：32
+[2026-03-13 01:14:44] 检测到职位卡片数量：32
+[2026-03-13 01:14:45] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Assistant / Digital Marketing  | Digital marketing | Sales & Marketing Executive | Marketing Assistant (Welcome F | Assistant Product Manager/Seni
+[2026-03-13 01:14:46] [排查] 第1页 URL：https://hk.jobsdb.com/zh/jobs?daterange=3，职位数：32，前几条：Assistant / Digital Marketing  | Digital marketing | Sales & Marketing Executive | Marketing Assistant (Welcome F | Assistant Product Manager/Seni
+[2026-03-13 01:15:02] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-13 01:15:07] 选择：Don't include a cover letter
+[2026-03-13 01:15:07] 点击 Continue 按钮
+[2026-03-13 01:15:14] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-13 01:15:47] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-13 01:15:54] 选择：Don't include a cover letter
+[2026-03-13 01:15:54] 点击 Continue 按钮
+[2026-03-13 01:15:57] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-13 01:16:29] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-13 01:16:37] 选择：Don't include a cover letter
+[2026-03-13 01:16:38] 点击 Continue 按钮
+[2026-03-13 01:16:48] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-13 01:17:40] 填表失败（第1次），未找到提交按钮，稍后重试…
+[2026-03-13 01:17:40] 填表失败（第1次），未找到提交按钮，稍后重试…
+[2026-03-13 01:17:55] expect_popup 超时，但已检测到处于申请表单页面，直接开始填表。
+[2026-03-13 01:18:03] 选择：Don't include a cover letter
+[2026-03-13 01:18:03] 点击 Continue 按钮
+[2026-03-13 01:18:11] 检测到 Update JobsDB Profile 页面，尝试直接 Continue
+[2026-03-13 01:19:03] 填表失败（第2次），未找到提交按钮，稍后重试…
+[2026-03-13 01:19:03] 填表失败（第2次），未找到提交按钮，稍后重试…

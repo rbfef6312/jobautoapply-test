@@ -1,0 +1,125 @@
+{
+  "_fetched_at": 1773087668,
+  "items": [
+    {
+      "name": "Accounting",
+      "slug": "accounting"
+    },
+    {
+      "name": "Administration & Office Support",
+      "slug": "administration-office-support"
+    },
+    {
+      "name": "Advertising, Arts & Media",
+      "slug": "advertising-arts-media"
+    },
+    {
+      "name": "Banking & Financial Services",
+      "slug": "banking-financial-services"
+    },
+    {
+      "name": "Call Centre & Customer Service",
+      "slug": "call-centre-customer-service"
+    },
+    {
+      "name": "CEO & General Management",
+      "slug": "ceo-general-management"
+    },
+    {
+      "name": "Community Services & Development",
+      "slug": "community-services-development"
+    },
+    {
+      "name": "Construction",
+      "slug": "construction"
+    },
+    {
+      "name": "Consulting & Strategy",
+      "slug": "consulting-strategy"
+    },
+    {
+      "name": "Design & Architecture",
+      "slug": "design-architecture"
+    },
+    {
+      "name": "Education & Training",
+      "slug": "education-training"
+    },
+    {
+      "name": "Engineering",
+      "slug": "engineering"
+    },
+    {
+      "name": "Farming, Animals & Conservation",
+      "slug": "farming-animals-conservation"
+    },
+    {
+      "name": "Government & Defence",
+      "slug": "government-defence"
+    },
+    {
+      "name": "Healthcare & Medical",
+      "slug": "healthcare-medical"
+    },
+    {
+      "name": "Hospitality & Tourism",
+      "slug": "hospitality-tourism"
+    },
+    {
+      "name": "Human Resources & Recruitment",
+      "slug": "human-resources-recruitment"
+    },
+    {
+      "name": "Information & Communication Technology",
+      "slug": "information-communication-technology"
+    },
+    {
+      "name": "Insurance & Superannuation",
+      "slug": "insurance-superannuation"
+    },
+    {
+      "name": "Legal",
+      "slug": "legal"
+    },
+    {
+      "name": "Manufacturing, Transport & Logistics",
+      "slug": "manufacturing-transport-logistics"
+    },
+    {
+      "name": "Marketing & Communications",
+      "slug": "marketing-communications"
+    },
+    {
+      "name": "Mining, Resources & Energy",
+      "slug": "mining-resources-energy"
+    },
+    {
+      "name": "Real Estate & Property",
+      "slug": "real-estate-property"
+    },
+    {
+      "name": "Retail & Consumer Products",
+      "slug": "retail-consumer-products"
+    },
+    {
+      "name": "Sales",
+      "slug": "sales"
+    },
+    {
+      "name": "Science & Technology",
+      "slug": "science-technology"
+    },
+    {
+      "name": "Self Employment",
+      "slug": "self-employment"
+    },
+    {
+      "name": "Sport & Recreation",
+      "slug": "sport-recreation"
+    },
+    {
+      "name": "Trades & Services",
+      "slug": "trades-services"
+    }
+  ]
+}

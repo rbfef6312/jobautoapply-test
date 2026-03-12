@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "auto",
+    "status": "no_jobs",
+    "reason": "本次未发现任何可投职位",
+    "total": 0,
+    "success": 0,
+    "failed": 0,
+    "skip": 0,
+    "external": 0,
+    "duration_sec": 32,
+    "at": "2026-03-12T10:08:41.894987"
+  },
+  {
+    "kind": "auto",
+    "status": "no_jobs",
+    "reason": "本次未发现任何可投职位",
+    "total": 0,
+    "success": 0,
+    "failed": 0,
+    "skip": 0,
+    "external": 0,
+    "duration_sec": 21,
+    "at": "2026-03-12T10:09:39.474565"
+  },
+  {
+    "kind": "auto",
+    "status": "all_failed",
+    "reason": "本次任务无成功投递",
+    "total": 64,
+    "success": 0,
+    "failed": 1,
+    "skip": 0,
+    "external": 0,
+    "duration_sec": 101,
+    "at": "2026-03-12T10:30:27.991373"
+  }
+]
