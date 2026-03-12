@@ -57,6 +57,7 @@ export default function ManualApply() {
       return
     }
     try {
+      api.logReport('manual_apply_start', `mode=${mode} maxPages=${maxPages}`).catch(() => {})
       await api.apply.run({
         mode1: mode === 1,
         mode2: mode === 2,

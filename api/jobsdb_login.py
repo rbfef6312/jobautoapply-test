@@ -5,6 +5,10 @@ import re
 import time
 from pathlib import Path
 
+from .config import ACCOUNTS_BASE
+from .operation_log import op_info, op_debug, op_error
+from .app_logger import log_info, log_error
+
 # 存储每个用户的登录会话： {user_id: {"playwright", "browser", "context", "page"}}
 _login_sessions: dict[int, dict] = {}
 _dflt_excluded = (
@@ -22,14 +26,26 @@ def _excluded_list() -> list[str]:
     return parts
 
 
+def _save_page_debug(user_id: int, page, suffix: str) -> None:
+    """失败时保存页面 HTML 便于排查"""
+    try:
+        debug_dir = ACCOUNTS_BASE / str(user_id)
+        debug_dir.mkdir(parents=True, exist_ok=True)
+        f = debug_dir / f"jobsdb_login_{suffix}.html"
+        html = page.content() if page else ""
+        f.write_text(html[:50000], encoding="utf-8")  # 限制 50KB
+        log_info("jobsdb_login 已保存页面快照", path=str(f), user_id=user_id)
+    except Exception as ex:
+        log_error("jobsdb_login 保存页面快照失败", err=str(ex), user_id=user_id)
+
+
 def start_login(user_id: int, email: str, state_path: Path) -> tuple[bool, str]:
     """开始 JobsDB 登录：打开页面，输入邮箱，请求验证码。返回 (success, message)"""
     from playwright.sync_api import sync_playwright
 
-    # 关闭已有会话
+    op_info(user_id, "jobsdb_login_start", f"email={email}", source="backend")
     _close_session(user_id)
 
-    # 与 jobsdb_worker 完全一致的 context 参数，避免 session 因 UA/headers 不匹配被拒绝
     try:
         p = sync_playwright().start()
         browser = p.chromium.launch(
@@ -50,40 +66,52 @@ def start_login(user_id: int, email: str, state_path: Path) -> tuple[bool, str]:
             "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
         )
         page = context.new_page()
-        page.set_default_timeout(20000)
-        # 直接打开 JobsDB 的 OAuth 登录入口，让其自动跳转到 login.seek.com
+        page.set_default_timeout(25000)
+
+        op_debug(user_id, "jobsdb_login_page_goto", "打开登录页", source="job")
         page.goto(
             "https://hk.jobsdb.com/zh/oauth/login?locale=hk&language=zh&realm=Username-Password-Authentication",
             wait_until="load",
         )
-        time.sleep(3)
+        time.sleep(4)
+        url_after = page.url or ""
+        op_debug(user_id, "jobsdb_login_page_loaded", f"url={url_after[:80]}", source="job")
 
         # 输入邮箱
         email_input = page.locator("input[type='email'], input[name*='email'], input[placeholder*='email' i]").first
         if email_input.count() > 0:
             email_input.fill(email)
-            time.sleep(0.5)
+            op_debug(user_id, "jobsdb_login_email_filled", f"email_input found, filled", source="job")
+            time.sleep(0.8)
         else:
-            # 尝试通用 input
             inputs = page.locator("input[type='text']")
             for i in range(inputs.count()):
                 inp = inputs.nth(i)
                 if "email" in (inp.get_attribute("name") or "").lower():
                     inp.fill(email)
+                    op_debug(user_id, "jobsdb_login_email_filled", f"fallback input[text] idx={i}", source="job")
                     break
+            else:
+                _save_page_debug(user_id, page, "no_email_input")
+                op_error(user_id, "jobsdb_login_fail", "未找到邮箱输入框，已保存页面快照", source="job")
+                return False, "未找到邮箱输入框，JobsDB 页面结构可能已更改"
 
-        # 点击发送验证码按钮：Email me a sign in code
+        # 点击发送验证码按钮
         btn = page.get_by_role("button", name=re.compile("email me a sign in code", re.I))
         if btn.count() == 0:
             btn = page.get_by_role("button", name=re.compile("sign in code|send code|发送.*代码|发送.*验证码", re.I))
         if btn.count() == 0:
             btn = page.locator("button[type='submit']")
-        if btn.count() > 0:
-            btn.first.click()
-        else:
-            return False, "未找到“Email me a sign in code”按钮，JobsDB 页面结构可能已更改"
 
-        time.sleep(3)
+        if btn.count() > 0:
+            op_debug(user_id, "jobsdb_login_click_send_code", "找到并点击发送验证码按钮", source="job")
+            btn.first.click()
+            time.sleep(4)
+            op_info(user_id, "jobsdb_login_send_code_clicked", "已点击发送验证码，等待邮箱接收", source="job")
+        else:
+            _save_page_debug(user_id, page, "no_send_button")
+            op_error(user_id, "jobsdb_login_fail", "未找到发送验证码按钮，已保存页面快照", source="job")
+            return False, "未找到“Email me a sign in code”按钮，JobsDB 页面结构可能已更改"
 
         _login_sessions[user_id] = {
             "playwright": p,
@@ -92,14 +120,16 @@ def start_login(user_id: int, email: str, state_path: Path) -> tuple[bool, str]:
             "page": page,
             "email": email,
         }
-        return True, "验证码已发送，请查收邮箱后输入"
+        return True, "验证码已发送，请查收邮箱后输入（若未收到请查看垃圾邮件，或稍等 2–5 分钟）"
     except Exception as e:
+        op_error(user_id, "jobsdb_login_exception", str(e), source="job")
         return False, str(e)
 
 
 def verify_login(user_id: int, code: str, state_path: Path) -> tuple[bool, str]:
     """输入验证码完成登录，保存 storage_state"""
     from .storage import append_log
+    op_info(user_id, "jobsdb_verify_start", f"code_len={len(code or '')}", source="backend")
 
     session = _login_sessions.get(user_id)
     if not session:

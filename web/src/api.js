@@ -80,7 +80,10 @@ export const api = {
     stop: () => request('POST', '/apply/stop'),
   },
   jobs: () => request('GET', '/jobs'),
-  logs: (limit) => request('GET', `/logs${limit ? `?limit=${limit}` : ''}`),
+  logs: (limit, ops = false) =>
+    request('GET', `/logs?limit=${limit || 500}${ops ? '&ops=1' : ''}`),
+  logReport: (action, detail = '') =>
+    request('POST', '/logs/report', { action, detail }),
   excludedCompanies: {
     get: () => request('GET', '/excluded-companies'),
     update: (companies) => request('PUT', '/excluded-companies', { companies }),

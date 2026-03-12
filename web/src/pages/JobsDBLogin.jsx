@@ -19,6 +19,7 @@ export default function JobsDBLogin() {
     setError('')
     setLoading(true)
     try {
+      api.logReport('jobsdb_send_code', `email=${email.trim().slice(0, 5)}***`).catch(() => {})
       await api.jobsdb.loginStart(email.trim())
       setStep(2)
     } catch (e) {
@@ -33,6 +34,7 @@ export default function JobsDBLogin() {
     setError('')
     setLoading(true)
     try {
+      api.logReport('jobsdb_verify_code', '输入验证码').catch(() => {})
       await api.jobsdb.loginVerify(code.trim())
       const s = await api.jobsdb.status()
       setStatus(s)

@@ -71,6 +71,7 @@ export default function Dashboard() {
       }
       const m = monitor || {}
       const mode = m.mode ?? 1
+      api.logReport('dashboard_apply_now', `mode=${mode}`).catch(() => {})
       await api.apply.run({
         mode1: mode === 1,
         mode2: mode === 2,

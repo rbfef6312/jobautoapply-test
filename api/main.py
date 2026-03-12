@@ -41,6 +41,7 @@ from .storage import (
 )
 from .runner import run_apply
 from .debug_log import debug
+from .operation_log import op_info, op_error, read_operations
 from .jobsdb_login import start_login as jobsdb_start_login, verify_login as jobsdb_verify_login
 
 # 任务状态（手动触发/定时任务）
@@ -254,6 +255,7 @@ def register(req: RegisterRequest, db: Session = Depends(get_db)):
     db.add(user)
     db.commit()
     db.refresh(user)
+    op_info(user.id, "auth_register", f"email={user.email}", source="backend")
     token = create_access_token(data={"sub": str(user.id)})
     return {"token": token, "user": {"id": user.id, "email": user.email, "name": user.name}}
 
@@ -263,6 +265,7 @@ def login(req: LoginRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.email == req.email).first()
     if not user or not verify_password(req.password, user.password_hash):
         raise HTTPException(status_code=401, detail="邮箱或密码错误")
+    op_info(user.id, "auth_login", f"email={user.email}", source="backend")
     token = create_access_token(data={"sub": str(user.id)})
     return {"token": token, "user": {"id": user.id, "email": user.email, "name": user.name}}
 
@@ -333,6 +336,7 @@ def _run_auto_apply_once(user_id: int) -> None:
     立即按当前自动投递设置跑一轮（与定时任务逻辑一致），
     用于用户在自动投递页点击「保存」后立刻执行一次。
     """
+    op_info(user_id, "apply_run_auto", "开始自动投递", source="job")
     debug("_run_auto_apply_once: 开始", user_id=user_id)
     from datetime import datetime, timedelta
 
@@ -589,6 +593,7 @@ def update_monitor(
             s.expected_salary = val
     db.commit()
 
+    op_info(user_id, "monitor_update", f"enabled={s.enabled} mode={s.mode}", source="backend")
     if should_trigger_now:
         debug("update_monitor: 保存成功，启动自动投递线程", user_id=user_id)
         t = threading.Thread(target=_run_auto_apply_once, args=(user_id,))
@@ -643,6 +648,7 @@ def jobsdb_status(user_id: int = Depends(get_current_user_id)):
 
 @app.delete("/api/jobsdb/logout")
 def jobsdb_logout(user_id: int = Depends(get_current_user_id)):
+    op_info(user_id, "jobsdb_logout", "", source="backend")
     clear_jobsdb_session(user_id)
     return {"ok": True, "message": "已注销 JobsDB 账号"}
 
@@ -670,6 +676,7 @@ def run_manual_apply(
 ):
     if _running_task.get(user_id):
         raise HTTPException(status_code=400, detail="已有任务在运行")
+    op_info(user_id, "apply_run_manual", f"modes=m1={req.mode1} m2={req.mode2} m3={req.mode3}", source="backend")
 
     # 在真正启动投递任务前，先用 Playwright 进行一次轻量校验，确保 JobsDB 登录态仍然有效
     ensure_jobsdb_logged_in(user_id)
@@ -867,9 +874,26 @@ def get_jobs(user_id: int = Depends(get_current_user_id)):
 
 # -------- 日志 --------
 @app.get("/api/logs")
-def get_logs(user_id: int = Depends(get_current_user_id), limit: int = 200):
+def get_logs(user_id: int = Depends(get_current_user_id), limit: int = 500, ops: int = 0):
+    """logs: 用户文本日志; operations: 操作指令日志（ops=1 时返回）"""
     lines = read_logs(user_id, limit=limit)
-    return {"logs": lines}
+    out = {"logs": lines}
+    if ops:
+        out["operations"] = read_operations(user_id, limit=min(500, limit))
+    return out
+
+
+class LogReportRequest(BaseModel):
+    action: str
+    detail: str = ""
+    level: str = "info"
+
+
+@app.post("/api/logs/report")
+def report_log(req: LogReportRequest, user_id: int = Depends(get_current_user_id)):
+    """前端上报操作日志"""
+    op_info(user_id, req.action, req.detail, source="frontend")
+    return {"ok": True}
 
 
 # -------- 排除公司黑名单 --------

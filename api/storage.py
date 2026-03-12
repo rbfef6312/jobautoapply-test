@@ -52,6 +52,11 @@ def auto_runs_file(user_id: int) -> Path:
     return _user_dir(user_id) / "auto_runs.json"
 
 
+def operations_file(user_id: int) -> Path:
+    """操作指令日志（结构化，便于排查）"""
+    return _user_dir(user_id) / "operations.jsonl"
+
+
 def get_current_email(user_id: int) -> str:
     p = current_email_file(user_id)
     if not p.exists():
