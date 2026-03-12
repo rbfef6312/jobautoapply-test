@@ -36,5 +36,3 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/jobsdb-autoapply:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/jobsdb-autoapply:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
