@@ -2,6 +2,9 @@
 build/
 dist/
 
+# 数据与运行产物（web 版运行时生成）
+data/
+
 # Python
 __pycache__/
 *.py[cod]

@@ -9,9 +9,6 @@ web/dist
 .vscode
 .idea
 *.md
-main.py
-accounts
-debug
 *.log
 data/accounts
 data/*.db
