@@ -21,7 +21,9 @@ RUN playwright install chromium && playwright install-deps chromium
 ENV QT_QPA_PLATFORM=offscreen
 ENV DISPLAY=
 
-# noVNC 调试：Xvfb + x11vnc + noVNC，用于可视化查看 JobsDB 登录浏览器
+# noVNC 调试：Xvfb + x11vnc + noVNC（DEBIAN_FRONTEND 避免 tzdata 交互式选择卡住 CI）
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Asia/Hong_Kong
 RUN apt-get update && apt-get install -y --no-install-recommends \
     xvfb x11vnc git netcat-openbsd \
     && git clone --depth 1 https://github.com/novnc/noVNC.git /opt/novnc \
