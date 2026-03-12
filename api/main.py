@@ -1,6 +1,7 @@
 """
 JobsDB 投递控制台 - FastAPI 后端
 """
+import asyncio
 import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -605,27 +606,27 @@ def update_monitor(
     return {"ok": True}
 
 
-# -------- JobsDB 登录 --------
+# -------- JobsDB 登录（用 asyncio.to_thread 跑 Playwright 同步 API，避免 asyncio 冲突）--------
 @app.post("/api/jobsdb/login/start")
-def jobsdb_login_start(
+async def jobsdb_login_start(
     req: JobsDBLoginStart,
     user_id: int = Depends(get_current_user_id),
 ):
     path = state_file(user_id)
-    ok, msg = jobsdb_start_login(user_id, req.email.strip(), path)
+    ok, msg = await asyncio.to_thread(jobsdb_start_login, user_id, req.email.strip(), path)
     if not ok:
         raise HTTPException(status_code=400, detail=msg)
     return {"ok": True, "message": msg}
 
 
 @app.post("/api/jobsdb/login/verify")
-def jobsdb_login_verify(
+async def jobsdb_login_verify(
     req: JobsDBLoginVerify,
     user_id: int = Depends(get_current_user_id),
 ):
     import time
     path = state_file(user_id)
-    ok, msg = jobsdb_verify_login(user_id, req.code.strip(), path)
+    ok, msg = await asyncio.to_thread(jobsdb_verify_login, user_id, req.code.strip(), path)
     if not ok:
         raise HTTPException(status_code=400, detail=msg)
     if msg and "@" in msg:

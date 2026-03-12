@@ -43,13 +43,19 @@ def start_login(user_id: int, email: str, state_path: Path) -> tuple[bool, str]:
     """开始 JobsDB 登录：打开页面，输入邮箱，请求验证码。返回 (success, message)"""
     from playwright.sync_api import sync_playwright
 
-    op_info(user_id, "jobsdb_login_start", f"email={email}", source="backend")
+    try:
+        from api.config import JOBSDB_HEADED
+        use_headed = JOBSDB_HEADED
+    except Exception:
+        use_headed = False
+
+    op_info(user_id, "jobsdb_login_start", f"email={email} headed={use_headed}", source="backend")
     _close_session(user_id)
 
     try:
         p = sync_playwright().start()
         browser = p.chromium.launch(
-            headless=True,
+            headless=not use_headed,
             args=["--disable-blink-features=AutomationControlled"],
         )
         context = browser.new_context(

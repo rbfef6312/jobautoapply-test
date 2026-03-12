@@ -13,6 +13,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 天
 
 # Worker / Playwright 相关
 JOBSDB_BASE_URL = os.environ.get("JOBSDB_BASE_URL", "https://hk.jobsdb.com")
+# 调试：JOBSDB_HEADED=1 时使用有界面浏览器，需配合 noVNC 查看（ENABLE_NOVNC=1）
+JOBSDB_HEADED = os.environ.get("JOBSDB_HEADED", "").lower() in ("1", "true", "yes")
 PAGE_DEFAULT_TIMEOUT_MS = int(os.environ.get("JOBSDB_PAGE_TIMEOUT", "45000"))
 WAIT_CARDS_TIMEOUT_MS = int(os.environ.get("JOBSDB_CARDS_TIMEOUT", "15000"))
 EXPECT_POPUP_TIMEOUT_MS = int(os.environ.get("JOBSDB_POPUP_TIMEOUT", "1500"))
