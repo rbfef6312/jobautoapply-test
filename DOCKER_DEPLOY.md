@@ -35,6 +35,7 @@ docker run -d \
 - `-p 8000:8000`：宿主机 8000 端口映射
 - `-v /opt/jobsdb_data:/app/data`：数据持久化（账号、登录态、数据库、日志）
 - `-e JOBSDB_SECRET_KEY`：生产环境务必设置随机密钥
+- `-e JOBSDB_PROXY`（可选）：住宅代理，用于 JobsDB 流量，格式 `socks5://host:port:user:pass` 或 `socks5://user:pass@host:port`
 
 ### 5. 1Panel 反代配置
 
@@ -67,6 +68,7 @@ docker build -t jobsdb-autoapply:latest .
 docker stop jobsdb-autoapply
 docker rm jobsdb-autoapply
 # 使用同样的 docker run 命令重新创建（注意保留 -v 挂载路径）
+# 如需香港住宅代理，加 -e JOBSDB_PROXY="socks5://host:port:user:pass"
 docker run -d \
   --name jobsdb-autoapply \
   -p 8000:8000 \

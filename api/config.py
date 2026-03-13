@@ -1,6 +1,7 @@
 """API 与 Worker 统一配置"""
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 API_DIR = Path(__file__).resolve().parent
@@ -15,6 +16,40 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 天
 JOBSDB_BASE_URL = os.environ.get("JOBSDB_BASE_URL", "https://hk.jobsdb.com")
 # 调试：JOBSDB_HEADED=1 时使用有界面浏览器，需配合 noVNC 查看（ENABLE_NOVNC=1）
 JOBSDB_HEADED = os.environ.get("JOBSDB_HEADED", "").lower() in ("1", "true", "yes")
+
+# 住宅代理：JOBSDB_PROXY=socks5://host:port:user:pass 或 socks5://user:pass@host:port
+def _parse_proxy() -> dict | None:
+    raw = os.environ.get("JOBSDB_PROXY", "").strip()
+    if not raw:
+        return None
+    # 支持 socks5://host:port:user:pass 格式
+    if raw.startswith("socks5://") or raw.startswith("http://") or raw.startswith("https://"):
+        rest = raw.split("://", 1)[1]
+        parts = rest.split(":")
+        if len(parts) >= 4 and "@" not in rest:
+            # host:port:user:pass
+            host, port, user, pw = parts[0], parts[1], parts[2], ":".join(parts[3:])
+            proto = "socks5" if "socks5" in raw else "http"
+            return {
+                "server": f"{proto}://{host}:{port}",
+                "username": user,
+                "password": pw,
+            }
+        # 标准 user:pass@host:port
+        parsed = urlparse(raw)
+        if parsed.hostname and parsed.port:
+            out = {"server": f"{parsed.scheme}://{parsed.hostname}:{parsed.port}"}
+            if parsed.username:
+                out["username"] = parsed.username
+            if parsed.password:
+                out["password"] = parsed.password
+            if out.get("username") or out.get("password"):
+                return out
+            return {"server": out["server"]}
+    return None
+
+
+JOBSDB_PROXY = _parse_proxy()
 PAGE_DEFAULT_TIMEOUT_MS = int(os.environ.get("JOBSDB_PAGE_TIMEOUT", "45000"))
 WAIT_CARDS_TIMEOUT_MS = int(os.environ.get("JOBSDB_CARDS_TIMEOUT", "15000"))
 EXPECT_POPUP_TIMEOUT_MS = int(os.environ.get("JOBSDB_POPUP_TIMEOUT", "1500"))

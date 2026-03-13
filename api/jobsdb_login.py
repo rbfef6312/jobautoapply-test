@@ -53,11 +53,17 @@ def start_login(user_id: int, email: str, state_path: Path) -> tuple[bool, str]:
     _close_session(user_id)
 
     try:
+        from api.config import JOBSDB_PROXY
+        proxy = JOBSDB_PROXY
+    except Exception:
+        proxy = None
+
+    try:
         p = sync_playwright().start()
-        browser = p.chromium.launch(
-            headless=not use_headed,
-            args=["--disable-blink-features=AutomationControlled"],
-        )
+        launch_opts = {"headless": not use_headed, "args": ["--disable-blink-features=AutomationControlled"]}
+        if proxy:
+            launch_opts["proxy"] = proxy
+        browser = p.chromium.launch(**launch_opts)
         context = browser.new_context(
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "

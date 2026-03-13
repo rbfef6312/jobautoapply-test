@@ -213,11 +213,18 @@ class JobsdbWorker(QThread):
         try:
             with sync_playwright() as p:
                 # 尽量贴近真实浏览器，降低“无卡片/反爬页面”的概率
-                browser = p.chromium.launch(
-                    headless=not self.show_browser,
-                    slow_mo=self.slow_mo_ms if self.show_browser else 0,
-                    args=["--disable-blink-features=AutomationControlled"],
-                )
+                launch_opts = {
+                    "headless": not self.show_browser,
+                    "slow_mo": self.slow_mo_ms if self.show_browser else 0,
+                    "args": ["--disable-blink-features=AutomationControlled"],
+                }
+                try:
+                    from api.config import JOBSDB_PROXY
+                    if JOBSDB_PROXY:
+                        launch_opts["proxy"] = JOBSDB_PROXY
+                except Exception:
+                    pass
+                browser = p.chromium.launch(**launch_opts)
                 context = browser.new_context(
                     storage_state=self.state_file,
                     user_agent=(
@@ -1405,9 +1412,19 @@ class ClassificationFetcher(QThread):
             return
 
         classifications: List[Dict[str, str]] = []
+        proxy = None
+        try:
+            from api.config import JOBSDB_PROXY
+            proxy = JOBSDB_PROXY
+        except Exception:
+            pass
+
         try:
             with sync_playwright() as p:
-                browser = p.chromium.launch(headless=True)
+                launch_opts = {"headless": True}
+                if proxy:
+                    launch_opts["proxy"] = proxy
+                browser = p.chromium.launch(**launch_opts)
                 context = browser.new_context(
                     user_agent=(
                         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "

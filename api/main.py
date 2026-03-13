@@ -2,6 +2,7 @@
 JobsDB 投递控制台 - FastAPI 后端
 """
 import asyncio
+import json
 import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -108,12 +109,21 @@ def ensure_jobsdb_logged_in(user_id: int, clear_on_fail: bool = True) -> None:
     try:
         from playwright.sync_api import sync_playwright  # type: ignore
     except ImportError:
-        # 未安装 Playwright 时不强制校验，避免接口直接不可用（正式投递本身也会失败并在日志中体现）
         return
+
+    proxy = None
+    try:
+        from api.config import JOBSDB_PROXY
+        proxy = JOBSDB_PROXY
+    except Exception:
+        pass
 
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
+            launch_opts = {"headless": True}
+            if proxy:
+                launch_opts["proxy"] = proxy
+            browser = p.chromium.launch(**launch_opts)
             context = browser.new_context(
                 storage_state=str(path),
                 user_agent=(
@@ -607,6 +617,82 @@ def update_monitor(
 
 
 # -------- JobsDB 登录（用 asyncio.to_thread 跑 Playwright 同步 API，避免 asyncio 冲突）--------
+from fastapi import File, UploadFile
+
+
+def _verify_storage_state(path: Path) -> tuple[bool, str]:
+    """用 storage_state 打开 JobsDB 校验是否已登录，返回 (ok, email_or_message)"""
+    if not path.exists():
+        return False, "文件不存在"
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        return False, "Playwright 未安装"
+
+    proxy = None
+    try:
+        from api.config import JOBSDB_PROXY
+        proxy = JOBSDB_PROXY
+    except Exception:
+        pass
+    try:
+        with sync_playwright() as p:
+            launch_opts = {"headless": True}
+            if proxy:
+                launch_opts["proxy"] = proxy
+            browser = p.chromium.launch(**launch_opts)
+            context = browser.new_context(
+                storage_state=str(path),
+                user_agent=(
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+                ),
+                locale="zh-HK",
+                timezone_id="Asia/Hong_Kong",
+            )
+            page = context.new_page()
+            page.set_default_timeout(45000)
+            page.goto("https://hk.jobsdb.com/zh/jobs?daterange=3", wait_until="domcontentloaded")
+            import time
+            time.sleep(3)
+            url = page.url or ""
+            browser.close()
+            lowered = url.lower()
+            if "login" in lowered or "oauth" in lowered or "signin" in lowered:
+                return False, "登录态已过期或无效，请重新导出"
+            # 尝试从页面提取邮箱（可选）
+            return True, ""
+    except Exception as e:
+        return False, str(e)
+
+
+@app.post("/api/jobsdb/login/upload-state")
+async def jobsdb_upload_state(
+    file: UploadFile = File(...),
+    user_id: int = Depends(get_current_user_id),
+):
+    """上传本地导出的 storage_state.json，校验后复用为已登录"""
+    if not file.filename or not file.filename.lower().endswith(".json"):
+        raise HTTPException(status_code=400, detail="请上传 .json 文件")
+    content = await file.read()
+    if len(content) > 2 * 1024 * 1024:  # 2MB 限制
+        raise HTTPException(status_code=400, detail="文件过大")
+    try:
+        json.loads(content)
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=400, detail="无效的 JSON 文件")
+    path = state_file(user_id)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(content)
+    ok, msg = await asyncio.to_thread(_verify_storage_state, path)
+    if not ok:
+        path.unlink(missing_ok=True)
+        raise HTTPException(status_code=400, detail=msg or "验证失败")
+    op_info(user_id, "jobsdb_upload_state", "导入登录态成功", source="backend")
+    email = get_current_email(user_id)
+    return {"ok": True, "message": "导入成功，已登录", "email": email or ""}
+
+
 @app.post("/api/jobsdb/login/start")
 async def jobsdb_login_start(
     req: JobsDBLoginStart,
