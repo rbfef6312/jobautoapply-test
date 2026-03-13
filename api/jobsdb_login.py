@@ -90,24 +90,67 @@ def start_login(user_id: int, email: str, state_path: Path) -> tuple[bool, str]:
         url_after = page.url or ""
         op_debug(user_id, "jobsdb_login_page_loaded", f"url={url_after[:80]}", source="job")
 
-        # 输入邮箱
-        email_input = page.locator("input[type='email'], input[name*='email'], input[placeholder*='email' i]").first
-        if email_input.count() > 0:
-            email_input.fill(email)
-            op_debug(user_id, "jobsdb_login_email_filled", f"email_input found, filled", source="job")
-            time.sleep(0.8)
-        else:
-            inputs = page.locator("input[type='text']")
-            for i in range(inputs.count()):
-                inp = inputs.nth(i)
-                if "email" in (inp.get_attribute("name") or "").lower():
-                    inp.fill(email)
-                    op_debug(user_id, "jobsdb_login_email_filled", f"fallback input[text] idx={i}", source="job")
-                    break
-            else:
-                _save_page_debug(user_id, page, "no_email_input")
-                op_error(user_id, "jobsdb_login_fail", "未找到邮箱输入框，已保存页面快照", source="job")
-                return False, "未找到邮箱输入框，JobsDB 页面结构可能已更改"
+        # 输入邮箱（SEEK 登录页为 React SPA，fill() 可能不触发 onChange，用 press_sequential_keys 模拟真实输入）
+        def _do_fill(loc):
+            try:
+                loc.click()  # 先聚焦
+                time.sleep(0.2)
+                loc.press_sequentially(email, delay=30)  # 模拟逐字输入，触发 React 事件
+                time.sleep(0.3)
+                return True
+            except Exception:
+                try:
+                    loc.fill(email)
+                    return True
+                except Exception:
+                    return False
+
+        filled = False
+        # 1. 优先用 label（SEEK 页有 "Email address"）
+        for lbl in ["Email address", "Email", "email", "電子郵件", "电邮"]:
+            try:
+                inp = page.get_by_label(lbl)
+                if inp.count() > 0:
+                    if _do_fill(inp.first):
+                        filled = True
+                        op_debug(user_id, "jobsdb_login_email_filled", f"by_label={lbl}", source="job")
+                        break
+            except Exception:
+                pass
+        # 2. 常规选择器
+        if not filled:
+            email_input = page.locator("input[type='email'], input[name*='email'], input[placeholder*='email' i], input[autocomplete='email']")
+            if email_input.count() > 0:
+                # 取可见的（避免填到隐藏的重复元素）
+                for i in range(min(email_input.count(), 5)):
+                    try:
+                        el = email_input.nth(i)
+                        if el.is_visible():
+                            if _do_fill(el):
+                                filled = True
+                                op_debug(user_id, "jobsdb_login_email_filled", f"input nth={i}", source="job")
+                            break
+                    except Exception:
+                        continue
+        # 3. fallback: input[type=text] 且 name 含 email
+        if not filled:
+            for i in range(page.locator("input[type='text']").count()):
+                try:
+                    inp = page.locator("input[type='text']").nth(i)
+                    if "email" in (inp.get_attribute("name") or "").lower() and inp.is_visible():
+                        if _do_fill(inp):
+                            filled = True
+                            op_debug(user_id, "jobsdb_login_email_filled", f"fallback idx={i}", source="job")
+                        break
+                except Exception:
+                    continue
+
+        if not filled:
+            _save_page_debug(user_id, page, "no_email_input")
+            op_error(user_id, "jobsdb_login_fail", "未找到或无法填充邮箱输入框，已保存页面快照", source="job")
+            return False, "未找到或无法填充邮箱输入框，JobsDB 页面结构可能已更改"
+
+        time.sleep(0.8)
 
         # 点击发送验证码按钮
         btn = page.get_by_role("button", name=re.compile("email me a sign in code", re.I))
