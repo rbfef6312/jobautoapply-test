@@ -78,12 +78,13 @@ def start_login(user_id: int, email: str, state_path: Path) -> tuple[bool, str]:
             "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
         )
         page = context.new_page()
-        page.set_default_timeout(25000)
+        # 代理下连接较慢，超时调大；wait_until=domcontentloaded 比 load 更快
+        page.set_default_timeout(60000)
 
         op_debug(user_id, "jobsdb_login_page_goto", "打开登录页", source="job")
         page.goto(
             "https://hk.jobsdb.com/zh/oauth/login?locale=hk&language=zh&realm=Username-Password-Authentication",
-            wait_until="load",
+            wait_until="domcontentloaded",
         )
         time.sleep(4)
         url_after = page.url or ""
